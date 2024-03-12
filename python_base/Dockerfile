@@ -26,6 +26,9 @@ RUN apt-get install -y wget && \
 # 將Anaconda添加到PATH
 ENV PATH /root/anaconda3/bin:$PATH
 
+# 使用conda init初始化bash shell，以便conda指令可以直接使用
+RUN /root/anaconda3/bin/conda init bash
+
 # 開放22端口以使用SSH
 EXPOSE 22
 
