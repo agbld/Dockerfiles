@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 更新APT套件列表並安裝SSH服務、screen和htop
-RUN apt-get update && apt-get install -y --no-install-recommends openssh-server wget screen htop
+RUN apt-get update && apt-get install -y openssh-server wget screen htop
 
 # 設定SSH服務
 RUN mkdir /var/run/sshd
