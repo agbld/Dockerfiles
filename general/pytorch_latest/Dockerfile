@@ -5,7 +5,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # 更新APT套件列表並安裝SSH服務、screen和htop
-RUN apt-get update && apt-get install -y --no-install-recommends openssh-server wget screen htop
+RUN apt-get update && apt-get install -y openssh-server wget screen htop
 
 # 設定SSH服務
 RUN mkdir /var/run/sshd
@@ -27,6 +27,9 @@ ENV PATH /root/anaconda3/bin:$PATH
 
 # 使用conda init初始化bash shell，以便conda指令可以直接使用
 RUN /root/anaconda3/bin/conda init bash
+
+# 用conda創建名為pytorch的環境並安裝PyTorch
+RUN conda create -n pytorch pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia -y
 
 # 清理APT緩存以減少映像大小
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
