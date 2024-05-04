@@ -7,7 +7,7 @@ docker build -t polkadot-wiki .
 
 To run the a container, use the following command:
 ```bash
-docker run -d --name polkadot-wiki -p 3000:3000 polkadot-wiki
+docker run -dt --rm --name polkadot-wiki -p 3000:3000 polkadot-wiki
 ```
 
 <!--
