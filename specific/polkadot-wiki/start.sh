@@ -14,7 +14,7 @@ git checkout dune-analytics
 yarn install
 
 # 啟動 Polkadot Wiki
-yarn build
+yarn polkadot:build
 yarn polkadot:start
 
 # 啟動 SSH 服務

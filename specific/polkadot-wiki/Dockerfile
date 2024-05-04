@@ -14,16 +14,6 @@ RUN sed -i 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid
 ENV NOTVISIBLE "in users profile"
 RUN echo "export VISIBLE=now" >> /etc/profile
 
-# # Clone Polkadot Wiki repository
-# WORKDIR /github
-# RUN git clone https://github.com/agbld/polkadot-wiki.git
-# WORKDIR /github/polkadot-wiki
-# RUN git checkout dune-analytics
-
-# # Build and start Polkadot Wiki web server
-# WORKDIR /github/polkadot-wiki
-# RUN yarn install
-
 # 將 start.sh 腳本添加到容器
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
