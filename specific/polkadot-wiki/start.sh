@@ -13,9 +13,9 @@ git checkout dune-analytics
 # 安裝依賴
 yarn install
 
-# 啟動 Polkadot Wiki
-yarn polkadot:build
-yarn polkadot:start
-
 # 啟動 SSH 服務
-/usr/sbin/sshd -D
+/usr/sbin/sshd
+
+# 啟動 Polkadot Wiki 並保持前台運行
+yarn polkadot:build
+exec yarn polkadot:start
