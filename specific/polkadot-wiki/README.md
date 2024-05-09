@@ -5,9 +5,14 @@ cd [dockerfile_folder]
 docker build -t polkadot-wiki .
 ```
 
-To run the a container, use the following command:
+To run a container, use the following command:
 ```bash
 docker run -dt --rm --name polkadot-wiki -p 3000:3000 polkadot-wiki
+```
+
+To run a container for devepolment, use the following command:
+```bash
+docker run -dt --name polkadot-wiki-dev -p 2222:22 -p 3001:3000 polkadot-wiki
 ```
 
 <!--
