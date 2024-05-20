@@ -1,0 +1,1 @@
+docker run -d --name vscode-server -p 8080:8080 -v C:\Users\agibl\docker_shared_folders\kai:/mnt/docker_shared_folders -e PASSWORD='root' -e SUDO_PASSWORD='root' --gpus all --restart unless-stopped vscode-server
