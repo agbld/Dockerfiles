@@ -12,7 +12,7 @@ docker build -t ollama-translate-service .
 
 To run a container, use the following command:
 ```
-docker run -d --name ollama-translate-service -p 5000:5000 --add-host=host.docker.internal:host-gateway ollama-translate-service --host host.docker.internal --port 11434 --model phi3:14b --post-prompts ""
+docker run --name ollama-translate-service -p 5000:5000 --add-host=host.docker.internal:host-gateway --restart=always ollama-translate-service --host host.docker.internal --port 11434 --model phi3:14b --post-prompts ""
 ```
 
 Modify following parameters as needed:
